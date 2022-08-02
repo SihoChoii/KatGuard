@@ -1,2 +1,4 @@
 # KatGuard
-Anti Bike Theft System
+---
+
+Defend your bike with LIGHT!
