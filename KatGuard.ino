@@ -23,8 +23,12 @@ void loop(void)
             Serial.print("Master UID");
             lockState = true;
             lcdUpdate("locked");
-            tone(buz1, NOTE_CS5, 100);
-            tone(buz1, NOTE_CS6, 100);
+            tone(buz1, NOTE_CS6);
+            delay(100);
+            noTone(buz1);
+            tone(buz1, NOTE_E6);
+            delay(100);
+            noTone(buz1);
         }
     }
     else
@@ -37,8 +41,22 @@ void loop(void)
                 lcdUpdate("unlocked");
                 master.uid = "NEKONEKONEKO";
                 master.payload = "NEKONEKONEKO";
-                tone(buz1, NOTE_CS5, 100);
-                tone(buz1, NOTE_CS6, 100);
+                tone(buz1, NOTE_CS6);
+                delay(100);
+                noTone(buz1);
+                tone(buz1, NOTE_E6);
+                delay(100);
+                noTone(buz1);
+            }
+            else
+            {
+                tone(buz1, NOTE_CS6);
+                delay(100);
+                noTone(buz1);
+                tone(buz1, NOTE_E5);
+                delay(100);
+                noTone(buz1);
+                //alarmSystem(MISSMATCH);
             }
         }
     }
