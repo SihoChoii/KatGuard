@@ -73,7 +73,7 @@ void loop(void)
             nfcKey nfcKeyData = readNFC();
             masterUid = nfcKeyData.uidData;
             masterPayload = nfcKeyData.payloadData;
-            Serial.print("Master UID")
+            Serial.print("Master UID");
             lockState = true;
             lcdUpdate("locked");
             tone(buz1, NOTE_CS5, 100);
