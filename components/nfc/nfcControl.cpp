@@ -14,7 +14,14 @@ void nfcStartup()
 
 bool nfcTagPresent()
 {
-    nfc.tagPresent();
+    if (nfc.tagPresent())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool authenticate(String tagId, String payload)
