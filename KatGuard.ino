@@ -6,6 +6,7 @@
 #include <PN532_I2C.h>
 #include <PN532.h>
 #include <NfcAdapter.h>
+
 PN532_I2C pn532_i2c(Wire);
 NfcAdapter nfc = NfcAdapter(pn532_i2c);
 byte nuidPICC[4];
@@ -22,6 +23,8 @@ struct nfcKey
 LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 // Custom Characters
+#define lockIcon 1
+#define unlockIcon 0
 byte locked[] = {
   B01110,
   B10001,
@@ -124,11 +127,11 @@ void lcdUpdate(String status)
     }
     else if (status == "locked")
     {
-        printState("Locked", 1);
+        printState("Locked", lockIcon);
     }
     else if (status == "unlocked")
     {
-        printState("Unlocked", 0);
+        printState("Unlocked", unlockIcon);
     }
 }
 
