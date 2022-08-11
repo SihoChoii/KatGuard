@@ -8,15 +8,9 @@
 
 extern bool lockState;
 
-class nfcData
+struct nfcData
 {
-    public:
     String payload, uid;
-};
-
-struct nfcKey
-{
-    String uidData, payloadData;
 };
 
 extern nfcData master;
@@ -25,6 +19,6 @@ void nfcStartup();
 bool nfcTagPresent();
 
 bool authenticate(String tagId, String payload);
-struct nfcKey readNFC();
+struct nfcData readNFC();
 
 #endif

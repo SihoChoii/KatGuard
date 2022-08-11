@@ -17,9 +17,9 @@ void loop(void)
     {
         if (nfcTagPresent())
         {
-            nfcKey nfcKeyData = readNFC();
-            master.uid = nfcKeyData.uidData;
-            master.payload = nfcKeyData.payloadData;
+            nfcData testKey = readNFC();
+            master.uid = testKey.uid;
+            master.payload = testKey.payload;
             Serial.print("Master UID");
             lockState = true;
             lcdUpdate("locked");

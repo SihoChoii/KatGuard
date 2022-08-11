@@ -3,8 +3,9 @@
     "configurations": [
         {
             "name": "Arduino",
-            "compilerPath": "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\bin\\avr-g++",
+            "compilerPath": "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-g++",
             "compilerArgs": [
+                "-w",
                 "-std=gnu++11",
                 "-fpermissive",
                 "-fno-exceptions",
@@ -15,19 +16,19 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\variants\\standard",
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\Wire\\src",
-                "C:\\Users\\sihoc\\Documents\\Arduino\\libraries\\PN532_I2C",
-                "C:\\Users\\sihoc\\Documents\\Arduino\\libraries\\PN532",
-                "C:\\Users\\sihoc\\Documents\\Arduino\\libraries\\NDEF",
-                "C:\\Users\\sihoc\\Documents\\Arduino\\libraries\\Arduino-LiquidCrystal-I2C-library-master",
-                "c:\\program files (x86)\\arduino\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include",
-                "c:\\program files (x86)\\arduino\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include-fixed",
-                "c:\\program files (x86)\\arduino\\hardware\\tools\\avr\\avr\\include"
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino",
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/variants/standard",
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/Wire/src",
+                "/Users/sihochoi/Documents/Arduino/libraries/PN532_I2C",
+                "/Users/sihochoi/Documents/Arduino/libraries/PN532",
+                "/Users/sihochoi/Documents/Arduino/libraries/NDEF-master",
+                "/Users/sihochoi/Documents/Arduino/libraries/Arduino-LiquidCrystal-I2C-library-master",
+                "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/lib/gcc/avr/7.3.0/include",
+                "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/lib/gcc/avr/7.3.0/include-fixed",
+                "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/avr/include"
             ],
             "forcedInclude": [
-                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino/Arduino.h"
             ],
             "cStandard": "c11",
             "cppStandard": "c++11",

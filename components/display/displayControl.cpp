@@ -78,9 +78,8 @@ void lcdUpdate(String status)
     {
         lcd.begin();
         lcd.backlight();
-        lockIcons lcdIcons;
-        lcd.createChar(1, lcdIcons.locked);
-        lcd.createChar(0, lcdIcons.unlocked);
+        lcd.createChar(1, lockedIcon);
+        lcd.createChar(0, unlockedIcon);
         lcdAnimation(status);
     }
     else if (status == "locked")

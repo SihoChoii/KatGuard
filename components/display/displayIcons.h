@@ -2,8 +2,8 @@
 #define DISPLAYICONS_H
 
 #include <Arduino.h>
-#define lockedIcon 1
-#define unlockedIcon 0
+// #define lockedIcon 1
+// #define unlockedIcon 0
 
 // struct lockIcons{
 //     byte locked[];
