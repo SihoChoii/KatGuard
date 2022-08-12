@@ -27,7 +27,7 @@ bool nfcTagPresent()
 bool authenticate(String tagId, String payload)
 {
     nfcData testKey = readNFC();
-    if (testKey.uid == tagId && testKey.payload == payload)
+    if (decrypt(testKey.uid, "NEKO") == decrypt(tagId, "NEKO") && decrypt(decrypt(testKey.payload, testKey.uid), "NEK0") == decrypt(decrypt(payload, tagId), "NEK0"))
     {
         return true;
     }
@@ -39,14 +39,12 @@ bool authenticate(String tagId, String payload)
 
 struct nfcData readNFC()
 {
-    // String tagId = "None";
     struct nfcData keyData;
 
     NfcTag tag = nfc.read();
     Serial.println(tag.getTagType());
     Serial.print("UID: ");Serial.println(tag.getUidString());
-    String tagId = tag.getUidString();
-    keyData.uid = tagId;
+    keyData.uid = encrypt(tag.getUidString(), "NEKO");
 
     if (tag.hasNdefMessage())
     {
@@ -84,7 +82,7 @@ struct nfcData readNFC()
             }
             Serial.print(" Payload (as String): ");
             Serial.println(payloadAsString);
-            keyData.payload = payloadAsString;
+            keyData.payload = encrypt(payloadAsString, keyData.uid);
 
             String uid = record.getId();
             if (uid != "")
@@ -94,4 +92,15 @@ struct nfcData readNFC()
             return keyData;
         }
     }
+}
+
+bool writeNFC(String tagId, String payload)
+{
+    NdefMessage message = NdefMessage();
+    NdefRecord record = NdefRecord();
+    record.setType("text/plain");
+    record.setId("");
+    record.setPayload(payload);
+    message.addRecord(record);
+    return nfc.write(tagId, message);
 }

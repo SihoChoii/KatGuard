@@ -7,7 +7,10 @@
 // NFC
 #include "components/nfc/nfcControl.cpp"
 
+// Buzzer
 #include "pitches.h"
-#include "pins.h"
+
+// Components
+#include "components/pins.h"
 
 #endif

@@ -39,8 +39,8 @@ void loop(void)
             {
                 lockState = false;
                 lcdUpdate("unlocked");
-                master.uid = "NEKONEKONEKO";
-                master.payload = "NEKONEKONEKO";
+                master.uid = "NEKO";
+                master.payload = "NEKO";
                 tone(buz1, NOTE_CS6);
                 delay(100);
                 noTone(buz1);
